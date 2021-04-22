@@ -321,7 +321,12 @@ do_patch()
     local patch=$(echo "$patch_spec": | cut -d: -f1)
     local subdir=$(echo "$patch_spec": | cut -d: -f2)
     local patch_opt=$(echo "$patch_spec": | cut -d: -f3 | sed -e "s/,/ /g")
-    local patch_cmd="patch -Z $patch_opt < $abs_location/$patch"
+
+    if [ $(patch --version | head -1 | cut -d ' ' -f1) == "GNU" ]; then
+      patch_opt="-Z ${patch_opt}"
+    fi
+
+    local patch_cmd="patch $patch_opt < $abs_location/$patch"
         
     cd "${subdir:-.}"  2> /dev/null;
     
