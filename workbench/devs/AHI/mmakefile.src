@@ -16,7 +16,7 @@ include $(SRCDIR)/config/aros.cfg
 EXEDIR := $(AROSDIR)
 
 NOWARN_FLAGS := $(NOWARN_POINTER_SIGN)
-USER_CPPFLAGS := $(NOWARN_FLAGS)
+USER_CPPFLAGS := $(NOWARN_FLAGS) -I$(SRCDIR)/workbench/devs/AHI/Include/C
 AHI_OPTIONS=--with-os-includedir=$(AROS_INCLUDES)
 
 # AHI's configure script will not set the needed preprocessor
