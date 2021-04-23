@@ -71,6 +71,7 @@ CONFIG_OPTS :=  --build=$(AROS_HOST_CPU)-$(AROS_HOST_ARCH)      \
                 --sysconfdir=$(DESTDIR)/etc                     \
                 --disable-grub-mkfont                           \
                 --disable-werror                                \
+                --disable-libzfs                                \
                 --program-prefix=
 
 grub2-host-touchfileflag := $(GENDIR)/arch/all-pc/boot/.grub2-files-touched
