@@ -1,7 +1,7 @@
 
 include $(SRCDIR)/config/aros.cfg
 
-USER_CPPFLAGS := -DMUIMASTER_YES_INLINE_STDARG
+USER_CPPFLAGS := -DMUIMASTER_YES_INLINE_STDARG -I$(SRCDIR)/workbench/devs/AHI/Include/C
 USER_LDFLAGS := -static
 
 FILES :=    usbaudio.class numtostr debug
