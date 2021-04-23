@@ -18,7 +18,9 @@
 #define X86_CPU_EXCEPT_COUNT    32
 #define HW_IRQ_BASE     X86_CPU_EXCEPT_COUNT
 
+#ifndef cpuid_t
 typedef  unsigned char cpuid_t;
+#endif
 typedef  unsigned char apicid_t;
 typedef  void *cpumask_t;
 
